@@ -1,11 +1,14 @@
 ﻿// -- **************************** Elementos de la Página **************************** -- //
 
-//var txt_Nombre;
-//var txt_Descripcion;
-//var cb_Tipo;
-//var txt_Recurso;
-//var lbl_Recurso;
-//var btn_Guardar;
+var txt_Origen;
+var btn_AceptarO;
+var btn_AceptarD;
+var cb_RegionDestino;
+var cb_PaisDestino;
+var cb_AeropuertoD;
+var cb_RegionOrigen;
+var cb_PaisOrigen;
+var cb_AeropuertoO;
 //var tbl_Informes_body;
 //var titulo_informe;
 //var btn_Nuevo;
@@ -38,9 +41,15 @@ HTMLElement.prototype.empty = function () {
 
 //Crea la referencia de los elementos HTML
 function instaciarElementos() {
-    //txt_Nombre = document.getElementById("txt_Nombre");
-    //txt_Descripcion = document.getElementById("txt_Descripcion");
-    //cb_Tipo = document.getElementById("cb_Tipo");
+    txt_Origen = document.getElementById("txt_Origen");
+    cb_RegionDestino = document.getElementById("cb_RegionDestino");
+    cb_PaisDestino = document.getElementById("cb_PaisDestino");
+    cb_AeropuertoD = document.getElementById("cb_AeropuertoD");
+    cb_RegionOrigen = document.getElementById("cb_RegionOrigen");
+    cb_PaisOrigen = document.getElementById("cb_PaisOrigen");
+    cb_AeropuertoO = document.getElementById("cb_AeropuertoO");
+    btn_AceptarD = document.getElementById("btn_AceptarD");
+    btn_AceptarO = document.getElementById("btn_AceptarO");
     //txt_Recurso = document.getElementById("txt_Recurso");
     //lbl_Recurso = document.getElementById("lbl_Recurso");
     //btn_Guardar = document.getElementById("btn_Guardar");
@@ -64,9 +73,25 @@ function crearEventos() {
     //    }
     //};
 
-    //btn_Nuevo.onclick = () => {
-    //    limpiar();
-    //};
+    txt_Origen.onclick = () => {
+        $("#modal-Origen").modal("show");
+    };
+
+    txt_Destino.onclick = () => {
+        $("#modal-Destino").modal("show");
+    };
+
+    btn_AceptarO.onclick = () => {
+        txt_Origen.value = cb_AeropuertoO.options[cb_AeropuertoO.selectedIndex].text;
+        txt_Origen.setAttribute("idAO", cb_AeropuertoO.value);
+        $("#modal-Origen").modal("hide");
+    };
+
+    btn_AceptarD.onclick = () => {
+        txt_Destino.value = cb_AeropuertoD.options[cb_AeropuertoD.selectedIndex].text;
+        txt_Destino.setAttribute("idAD",cb_AeropuertoD.value);
+        $("#modal-Destino").modal("hide");
+    };
 
     //btn_Guardar.onclick = () => {
     //    if (txt_Nombre.value != "") {
@@ -97,6 +122,8 @@ window.ready(() => {
 
     //Crea todos los eventos de los elementos HTML
     crearEventos();
-    cargarTipo();
-    cargarInformes();
+    //cargarTipo();
+    //cargarInformes();
 });
+
+
