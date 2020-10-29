@@ -31,7 +31,56 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer">
+            <button type="button" id="btn_Continuar" class="btn btn-lg btn-block btn-primary" >Continuar</button>
+        </div>
     </div>
+    <div id="cd_Pasajero" class="card mt-3" style="display:none">
+        <div class="card-header">
+            Datos del Pasajero
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="cb_Genero">Genero</label>
+                    <select class="form-control" name="" id="cb_Genero">
+                        <option value="0">- Seleccione -</option>
+                        <option value="1">Femenino</option>
+                        <option value="2">Masculino</option>
+                    </select>
+                    <small id="GeneroHelp" class="form-text text-muted">Seleccione su Genero</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txt_Nacionalidad">Nacionalidad</label>
+                    <input type="text" class="form-control" name="" id="txt_Nacionalidad"/>
+                    <small id="NacionalidadHelp" class="form-text text-muted">Seleccione su Genero</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txt_Apellidos">Apellido(s)</label>
+                    <input type="text" class="form-control" name="" id="txt_Apellidos"/>
+                    <small id="ApellidosHelp" class="form-text text-muted">Ingrese apellidos</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txt_Nombres">Nombre(s)</label>
+                    <input type="text" class="form-control" name="" id="txt_Nombres"/>
+                    <small id="NombresHelp" class="form-text text-muted">Ingrese nombres</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txt_FechaNacimiento">Fecha Nacimiento</label>
+                    <input type="date" class="form-control" name="" id="txt_FechaNacimiento"/>
+                    <small id="FechaNacimientoHelp" class="form-text text-muted">Ingrese fecha de Nacimiento</small>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" id="btn_Guardar" class="btn btn-lg btn-block btn-success" >Guardar</button>
+        </div>
+    </div>
+
     <div class="modal fade" id="modal-Origen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
