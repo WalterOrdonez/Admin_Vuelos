@@ -18,7 +18,7 @@
 			    <img src="img/airplane.png"/>
 		    </div>
 		    <div class="login-content">
-			    <form action="index.html">
+			    <form id="Form1" runat="server">
 				    <img src="img/avatar.svg"/>
 				    <h2 class="title">Bienvenido</h2>
            		    <div class="input-div one">
@@ -46,6 +46,5 @@
                 </form>
             </div>
         </div>
-        <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
