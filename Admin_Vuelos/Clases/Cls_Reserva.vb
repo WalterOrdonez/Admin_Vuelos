@@ -1,13 +1,15 @@
-﻿Imports System.Data.Odbc
+﻿
+
+Imports System.Data.SqlClient
 
 Public Class Cls_Reserva
     Private opeDB As New Ope_DB()
     Public Function getRegion()
         Dim SQL As String = ""
-        Dim comando As New OdbcCommand()
+        Dim comando As New SqlCommand()
         Dim dt As DataTable
 
-        SQL = "SELECT ID_REGION,NOMBRE FROM PROYECTO2020.REGIONES"
+        SQL = "SELECT ID_REGION,NOMBRE FROM PROYECTO2020.dbo.REGIONES"
         comando.CommandText = SQL
 
         dt = opeDB.BDget_datos_sql(comando)
@@ -18,9 +20,9 @@ Public Class Cls_Reserva
 
     Public Function getPais(region As String)
         Dim SQL As String = ""
-        Dim comando As New OdbcCommand()
+        Dim comando As New SqlCommand()
         Dim dt As DataTable
-        SQL = "SELECT ID_PAIS, NOMBRE, ID_REGION FROM PROYECTO2020.PAISES"
+        SQL = "SELECT ID_PAIS, NOMBRE, ID_REGION FROM PROYECTO2020.dbo.PAISES"
         comando.CommandText = SQL
 
         dt = opeDB.BDget_datos_sql(comando)
@@ -30,9 +32,9 @@ Public Class Cls_Reserva
 
     Public Function getAeropuerto(pais As String)
         Dim SQL As String = ""
-        Dim comando As New OdbcCommand()
+        Dim comando As New SqlCommand()
         Dim dt As DataTable
-        SQL = "SELECT ID_AEROPUERTO,ID_PAIS,DIRECCION, NOMBRE FROM PROYECTO2020.AEROPUERTO"
+        SQL = "SELECT ID_AEROPUERTO,ID_PAIS,DIRECCION, NOMBRE FROM PROYECTO2020.dbo.AEROPUERTO"
 
         comando.CommandText = SQL
 
@@ -41,19 +43,28 @@ Public Class Cls_Reserva
         Return dt
     End Function
 
-    Public Function setReserva()
+    Public Function setReserva(asiento As String, usuario As String, id_clase As String, id_pasajero As Pasajero)
         Dim SQL As String = ""
-        SQL = "INSERT INTO PROYECTO2020.BOLETOS(ID_BOLETO,ASIENTO,ID_USUARIO,ID_VUELO,ID_CLASE,ID_PASAJERO) " &
-                "VALUES((SELECT MAX(ID_BOLETO)+1 FROM PROYECTO2020.BOLETOS),@ASIENTO,())"
+        Dim comando As New SqlCommand()
+
+        SQL = "INSERT INTO PROYECTO2020.dbo.BOLETOS(ASIENTO,ID_USUARIO,ID_VUELO,ID_CLASE,ID_PASAJERO) " &
+                "VALUES(@ASIENTO,(SELECT ID_USUARIOS FROM USUARIOS WHERE NOMBRE_USUARIO=@USUARIO),@ID_VUELO,@ID_CLASE,@ID_PASAJERO)"
+
+        comando.CommandText = SQL
+        comando.Parameters.AddWithValue("@USUARIO", usuario)
+        comando.Parameters.AddWithValue("@ID_PASAJERO", id_pasajero)
+        comando.Parameters.AddWithValue("@ID_CLASE", id_clase)
+        comando.Parameters.AddWithValue("@ID_PASAJERO", id_pasajero)
 
 
+        Return opeDB.BDset_insert_sql(comando)
     End Function
 
     Public Function getClase()
         Dim SQL As String = ""
-        Dim comando As New OdbcCommand()
+        Dim comando As New SqlCommand()
         Dim dt As DataTable
-        SQL = "SELECT ID_CLASE,NOMBRE FROM PROYECTO2020.CLASES"
+        SQL = "SELECT ID_CLASE,NOMBRE FROM PROYECTO2020.dbo.CLASES"
 
         comando.CommandText = SQL
 

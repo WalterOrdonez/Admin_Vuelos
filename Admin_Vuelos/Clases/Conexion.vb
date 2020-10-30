@@ -1,13 +1,14 @@
-﻿Imports System.Data.Odbc
+﻿
+
+Imports System.Data.SqlClient
 
 Public Class Conexion
-    Dim oraDb As String = "Dsn=PROYECTO2020;UID=PROYECTO2020;PWD=1234;DATABASE=ConexioOracle"
-    Dim conn As OdbcConnection
+    Dim oraDb As String = "Server = localhost;Database=PROYECTO2020;User Id=myUsername;Password=myPassword;"
+
+    Dim conn As SqlConnection
     Public Function Conectar()
         Try
-            conn = New OdbcConnection With {
-                .ConnectionString = oraDb
-            }
+            conn = New SqlConnection(oraDb)
             conn.Open()
         Catch ex As Exception
             conn.Close()

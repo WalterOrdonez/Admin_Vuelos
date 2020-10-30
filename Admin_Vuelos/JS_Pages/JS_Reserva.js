@@ -10,12 +10,12 @@ var cb_AeropuertoD;
 var cb_RegionOrigen;
 var cb_PaisOrigen;
 var cb_AeropuertoO;
-var btn_Guardar;
+var btn_Aceptar;
 var cb_Clase;
 var cd_Pasajero;
 var btn_Continuar;
-//var cb_Categoria;
-
+var btn_Guardar;
+var btn_Buscar;
 
 
 // -- **************************** Funciones Generales **************************** -- //
@@ -53,12 +53,12 @@ function instaciarElementos() {
     cb_AeropuertoO = document.getElementById("cb_AeropuertoO");
     btn_AceptarD = document.getElementById("btn_AceptarD");
     btn_AceptarO = document.getElementById("btn_AceptarO");
-    btn_Guardar = document.getElementById("btn_Guardar");
+    btn_Aceptar = document.getElementById("btn_Aceptar");
     cb_Clase = document.getElementById("cb_Clase");
     cd_Pasajero = document.getElementById("cd_Pasajero");
     btn_Continuar = document.getElementById("btn_Continuar");
-    //titulo_informe = document.getElementById("titulo_informe");
-    //btn_Nuevo = document.getElementById("btn_Nuevo");
+    btn_Guardar = document.getElementById("btn_Guardar");
+    btn_Buscar = document.getElementById("btn_Buscar");
     //cb_Categoria = document.getElementById("cb_Categoria");
 };
 
@@ -113,6 +113,10 @@ function crearEventos() {
     };
 
     btn_Continuar.onclick = () => {
+        cd_Vuelos.setAttribute("style", "display:block");
+    };
+
+    btn_Aceptar.onclick = () => {
         cd_Pasajero.setAttribute("style", "display:block");
     };
 
@@ -327,3 +331,38 @@ function getAeropuertoD() {
             }
         });
 }
+
+
+function getVuelos() {
+    var url = 'Reserva.aspx/getVuelos';
+    //Parametros a Web Method
+    var data = { 'pais': cb_PaisDestino.value };
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => {
+            var obj = JSON.parse(response.d);
+            cb_AeropuertoD.empty();
+            if (obj.data.length > 0) {
+                var aeroDef = document.createElement("option");
+                aeroDef.value = 0;
+                aeroDef.text = "- Seleccione -";
+                cb_AeropuertoD.appendChild(aeroDef);
+                for (var i = 0; i < obj.data.length; i++) {
+                    var aeropuerto = obj.data[i];
+                    var opt_paisD = document.createElement("option");
+                    opt_paisD.value = aeropuerto.id_aeropuerto;
+                    opt_paisD.text = aeropuerto.nombre;
+
+                    cb_AeropuertoD.appendChild(opt_paisD);
+                };
+            } else {
+                Swal.fire("¡ERROR!", "Hubo un error y no se pudo obtener los datos de los aeropuertos", "error");
+            }
+        });
+};
