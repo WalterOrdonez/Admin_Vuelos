@@ -3,7 +3,7 @@
 Imports System.Data.SqlClient
 
 Public Class Conexion
-    Dim oraDb As String = "Server = localhost;Database=PROYECTO2020;User Id=myUsername;Password=myPassword;"
+    Dim oraDb As String = "Server = ESGODRA\SQLEXPRESS;Database=PROYECTO2020;User Id=nuevo;Password=1234;"
 
     Dim conn As SqlConnection
     Public Function Conectar()

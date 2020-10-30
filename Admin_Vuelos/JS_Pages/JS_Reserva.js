@@ -76,6 +76,8 @@ function crearEventos() {
     //    }
     //};
 
+    //Prueba
+
     txt_Origen.onclick = () => {
         $("#modal-Origen").modal("show");
     };
@@ -120,7 +122,7 @@ function crearEventos() {
         cd_Pasajero.setAttribute("style", "display:block");
     };
 
-    btn_Guardar.onclick = () => {
+   /* btn_Guardar.onclick = () => {
         if (txt_Origen.value != "") {
             if (txt_Fecha.value != "") {
                 if (cb_clase.value != "") {
@@ -139,7 +141,7 @@ function crearEventos() {
         } else {
             Swal.fire("¡Info!", "Debe seleccionar un origen", "info");
         }
-    };
+    };*/
 };
 
 //Funcion que se ejecuta al terminar de cargar la página
@@ -169,7 +171,6 @@ function getRegion() {
             console.log(response);
             var obj = JSON.parse(response.d);
             cb_RegionOrigen.empty();
-            opt_regionD.empty();
             if (obj.data.length > 0) {
                 var regionDef = document.createElement("option");
                 regionDef.value = 0;
@@ -209,7 +210,7 @@ function getPaisO() {
         .catch(error => console.error('Error:', error))
         .then(response => {
             var obj = JSON.parse(response.d);
-            cb_RegionOrigen.empty();
+            cb_PaisOrigen.empty();
             if (obj.data.length > 0) {
                 var paisDef = document.createElement("option");
                 paisDef.value = 0;

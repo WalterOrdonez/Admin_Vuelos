@@ -34,7 +34,7 @@ Public Class Cls_Reserva
         Dim SQL As String = ""
         Dim comando As New SqlCommand()
         Dim dt As DataTable
-        SQL = "SELECT ID_AEROPUERTO,ID_PAIS,DIRECCION, NOMBRE FROM PROYECTO2020.dbo.AEROPUERTO"
+        SQL = "SELECT ID_AEROPUERTO,ID_PAIS,DIRECCION, NOMBRE FROM PROYECTO2020.dbo.AEROPUERTOS"
 
         comando.CommandText = SQL
 
