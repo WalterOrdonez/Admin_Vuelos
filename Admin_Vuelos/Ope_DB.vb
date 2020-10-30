@@ -1,4 +1,5 @@
-﻿Imports System.Data.Odbc
+﻿
+Imports System.Data.SqlClient
 
 Public Class Ope_DB
     Private connexion As New Conexion()
@@ -11,17 +12,17 @@ Public Class Ope_DB
     ''' <returns></returns>
     ''' <remarks></remarks>
 
-    Public Function BDget_datos_sql(ByVal comando As OdbcCommand) As DataTable
+    Public Function BDget_datos_sql(ByVal comando As SqlCommand) As DataTable
         Dim tabla As DataTable = New DataTable()
         Dim resultado As String = String.Empty
-        Dim conexion As OdbcConnection = connexion.Conectar()
+        Dim conexion As SqlConnection = connexion.Conectar()
 
         Try
             If conexion.State <> System.Data.ConnectionState.Open Then conexion.Open()
-            Dim comand As OdbcCommand = New OdbcCommand()
+            Dim comand As SqlCommand = New SqlCommand()
             comand = comando
             comand.Connection = conexion
-            Dim adap As OdbcDataAdapter = New OdbcDataAdapter(comand)
+            Dim adap As SqlDataAdapter = New SqlDataAdapter(comand)
             adap.Fill(tabla)
         Catch ex As Exception
             tabla = Nothing
@@ -41,13 +42,13 @@ Public Class Ope_DB
     ''' <returns></returns>
     ''' <remarks></remarks>
 
-    Public Function BDget_escalar_sql_object(ByVal comando As OdbcCommand) As Object
+    Public Function BDget_escalar_sql_object(ByVal comando As SqlCommand) As Object
         Dim element As Object
-        Dim conexion As OdbcConnection = connexion.Conectar()
+        Dim conexion As SqlConnection = connexion.Conectar()
 
         Try
             If conexion.State <> System.Data.ConnectionState.Open Then conexion.Open()
-            Dim comand As OdbcCommand = New OdbcCommand()
+            Dim comand As SqlCommand = New SqlCommand()
             comand = comando
             comand.Connection = conexion
             element = comando.ExecuteScalar()
@@ -68,13 +69,13 @@ Public Class Ope_DB
     ''' <param name="comando"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function BDget_escalar_sql(ByVal comando As OdbcCommand) As String
+    Public Function BDget_escalar_sql(ByVal comando As SqlCommand) As String
         Dim resultado As String = String.Empty
-        Dim conexion As OdbcConnection = connexion.Conectar()
+        Dim conexion As SqlConnection = connexion.Conectar()
 
         Try
             If conexion.State <> System.Data.ConnectionState.Open Then conexion.Open()
-            Dim comand As OdbcCommand = New OdbcCommand()
+            Dim comand As SqlCommand = New SqlCommand()
             comand = comando
             comand.Connection = conexion
             Dim element As Object
@@ -98,13 +99,13 @@ Public Class Ope_DB
     ''' <param name="comando"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function BDset_insert_sql(ByVal comando As OdbcCommand) As Integer
-        Dim conexion As OdbcConnection = connexion.Conectar()
+    Public Function BDset_insert_sql(ByVal comando As SqlCommand) As Integer
+        Dim conexion As SqlConnection = connexion.Conectar()
         Dim bandera As Integer = 0
 
         Try
             If conexion.State <> System.Data.ConnectionState.Open Then conexion.Open()
-            Dim command As OdbcCommand = New OdbcCommand()
+            Dim command As SqlCommand = New SqlCommand()
             command = comando
             command.Connection = conexion
             bandera = command.ExecuteNonQuery()

@@ -40,8 +40,8 @@
             	       </div>
             	    </div>
             	    <a href="#">¿Olvidaste la Contraseña?</a>
-            	    <input type="submit" class="btn" value="Inicia Sesión"/>
-                  <input type="submit" class="btn" value="Registrate"/>
+            	    <input type="submit" class="btn" id="btnLogin" value="Inicia Sesión"/>
+                  <input type="submit" class="btn" id="btnRegistro" value="Registrate"/>
 
                 </form>
             </div>

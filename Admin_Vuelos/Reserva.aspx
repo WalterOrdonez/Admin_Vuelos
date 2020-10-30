@@ -35,6 +35,35 @@
             <button type="button" id="btn_Continuar" class="btn btn-lg btn-block btn-primary" >Continuar</button>
         </div>
     </div>
+    <div id="cd_Vuelos" class="card mt-3" style="display:none">
+        <div class="card-header">
+            Vuelos
+        </div>
+        <div class="card-body pt-0">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-sm mt-0" id="tbl_Vuelos">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Origen</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Escalas</th>
+                                <th scope="col">Duración</th>
+                                <th scope="col">Avión</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbl_Vuelos_body">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" id="btn_Aceptar" class="btn btn-lg btn-block btn-primary" >Aceptar</button>
+        </div>
+    </div>
     <div id="cd_Pasajero" class="card mt-3" style="display:none">
         <div class="card-header">
             Datos del Pasajero
@@ -77,7 +106,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="button" id="btn_Guardar" class="btn btn-lg btn-block btn-success" >Guardar</button>
+            <button type="button" id="btn_Reservar" class="btn btn-lg btn-block btn-success" >Reservar</button>
         </div>
     </div>
 
