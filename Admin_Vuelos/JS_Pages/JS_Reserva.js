@@ -169,7 +169,7 @@ function getRegion() {
             console.log(response);
             var obj = JSON.parse(response.d);
             cb_RegionOrigen.empty();
-            opt_regionD.empty();
+            cb_.empty();
             if (obj.data.length > 0) {
                 var regionDef = document.createElement("option");
                 regionDef.value = 0;
