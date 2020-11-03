@@ -107,8 +107,8 @@ Public Class Reserva
                     Dim aeropuerto = New With {.id_aeropuerto = Nothing, .id_pais = Nothing, .direccion = Nothing, .nombre = Nothing}
                     aeropuerto.id_aeropuerto = r("ID_AEROPUERTO")
                     aeropuerto.id_pais = r("ID_PAIS")
-                    aeropuerto.direccion = ("DIRECCION")
-                    aeropuerto.nombre = ("NOMBRE")
+                    aeropuerto.direccion = r("DIRECCION")
+                    aeropuerto.nombre = r("NOMBRE")
 
                     arraylista.Add(aeropuerto)
                 Next
