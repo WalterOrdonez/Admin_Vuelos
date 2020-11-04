@@ -58,6 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Vuelos.aspx">Programar vuelo</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.aspx">Salir</a>
+                    </li>
                 </ul>
             </div>
         </nav>

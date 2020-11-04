@@ -6,10 +6,10 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login</title>
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/jquery-3.4.1.js"></script>
-
+    <script src="JS_Pages/JS_Login.js"></script>
+    <script src="Scripts/sweetalert2.js"></script>
     <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/sweetalert2.css" rel="stylesheet" />
 </head>
 <body>
         <img class="wave" src="img/wave.png"/>
@@ -26,8 +26,8 @@
            		   		    <i class="fas fa-user"></i>
            		       </div>
            		       <div class="div">
-           		   		    <h5>Nombre de Usuario</h5>
-           		   		    <input type="text" class="input"/>
+           		   		    <h5></h5>
+           		   		    <input type="text" class="input" id="txt_usuario" placeholder="Usuario"/>
            		       </div>
            		    </div>
            		    <div class="input-div pass">
@@ -35,13 +35,12 @@
            		    	    <i class="fas fa-lock"></i>
            		       </div>
            		       <div class="div">
-           		    	    <h5>Contraseña</h5>
-           		    	    <input type="password" class="input"/>
+           		    	    <h5></h5>
+           		    	    <input type="password" id="txt_pass" class="input" placeholder="Contraseña"/>
             	       </div>
             	    </div>
             	    <a href="#">¿Olvidaste la Contraseña?</a>
-            	    <input type="submit" class="btn" id="btnLogin" value="Inicia Sesión"/>
-                  <input type="submit" class="btn" id="btnRegistro" value="Registrate"/>
+            	    <input type="button" class="btn" id="btnLogin" value="Inicia Sesión"/>
 
                 </form>
             </div>

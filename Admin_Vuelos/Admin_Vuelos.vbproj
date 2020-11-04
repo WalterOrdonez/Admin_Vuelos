@@ -151,6 +151,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="JS_Pages\JS_Login.js" />
     <Content Include="JS_Pages\JS_Reserva.js" />
     <Content Include="Login.aspx" />
     <Content Include="Reserva.aspx" />
