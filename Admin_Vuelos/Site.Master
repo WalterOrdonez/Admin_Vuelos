@@ -15,8 +15,10 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/sweetalert2.css" rel="stylesheet" />
     <script src="JS_Pages/JS_Reserva.js"></script>
     <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/sweetalert2.js"></script>
 </head>
 <body>
     
