@@ -137,6 +137,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\sweetalert2.all.min.js" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -151,6 +152,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="JS_Pages\JS_Reserva.js" />
+    <Content Include="JS_Pages\Vuelo.js" />
     <Content Include="Login.aspx" />
     <Content Include="Reserva.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -188,6 +190,7 @@
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Clases\Cls_Reserva.vb" />
+    <Compile Include="Clases\Cls_Vuelo.vb" />
     <Compile Include="Clases\Conexion.vb" />
     <Compile Include="Clases\Pasajero.vb" />
     <Compile Include="Default.aspx.vb">
