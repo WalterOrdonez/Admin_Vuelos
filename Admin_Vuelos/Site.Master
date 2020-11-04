@@ -15,10 +15,10 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/sweetalert2.css" rel="stylesheet" />
     <script src="JS_Pages/JS_Reserva.js"></script>
-    <script src="JS_Pages/Vuelo.js"></script>
     <script src="Scripts/jquery-3.4.1.js"></script>
-    <script src="Content/sweetalert2.all.min.js"></script>
+    <script src="Scripts/sweetalert2.js"></script>
 </head>
 <body>
     
@@ -42,7 +42,7 @@
             </Scripts>
         </asp:ScriptManager>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Aerolinea</a>
+            <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

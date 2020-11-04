@@ -74,15 +74,15 @@
                     <label for="cb_Genero">Genero</label>
                     <select class="form-control" name="" id="cb_Genero">
                         <option value="0">- Seleccione -</option>
-                        <option value="1">Femenino</option>
-                        <option value="2">Masculino</option>
+                        <option value="F">Femenino</option>
+                        <option value="M">Masculino</option>
                     </select>
                     <small id="GeneroHelp" class="form-text text-muted">Seleccione su Genero</small>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="txt_Nacionalidad">Nacionalidad</label>
                     <input type="text" class="form-control" name="" id="txt_Nacionalidad"/>
-                    <small id="NacionalidadHelp" class="form-text text-muted">Seleccione su Genero</small>
+                    <small id="NacionalidadHelp" class="form-text text-muted">Seleccione su Nacionalidad</small>
                 </div>
             </div>
             <div class="row">
@@ -120,21 +120,21 @@
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="">Región de Origen</label>
+                            <label for="cb_RegionOrigen">Región de Origen</label>
                             <select class="form-control" id="cb_RegionOrigen">
                                 <option value="0">- Seleccione -</option>
                             </select>
                             <small id="RegionOHelp" class="form-text text-muted">Seleccione la región de origen</small>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="">País de Origen</label>
+                            <label for="cb_PaisOrigen">País de Origen</label>
                             <select class="form-control" id="cb_PaisOrigen">
                                 <option value="0">- Seleccione -</option>
                             </select>
                             <small id="PaisOHelp" class="form-text text-muted">Seleccione el país de origen</small>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="">Aeropuerto</label>
+                            <label for="cb_AeropuertoO">Aeropuerto</label>
                             <select class="form-control" id="cb_AeropuertoO">
                                 <option value="0">- Seleccione -</option>
                             </select>
@@ -158,21 +158,21 @@
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="">Región de Destino</label>
+                            <label for="cb_RegionDestino">Región de Destino</label>
                             <select class="form-control" id="cb_RegionDestino">
                                 <option value="0">- Seleccione -</option>
                             </select>
                             <small id="RegionDHelp" class="form-text text-muted">Seleccione la región de origen</small>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="">País de Destino</label>
+                            <label for="cb_PaisDestino">País de Destino</label>
                             <select class="form-control" id="cb_PaisDestino">
                                 <option value="0">- Seleccione -</option>
                             </select>
                             <small id="PaisDHelp" class="form-text text-muted">Seleccione el país de origen</small>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="">Aeropuerto Destino</label>
+                            <label for="cb_AeropuertoD">Aeropuerto Destino</label>
                             <select class="form-control" id="cb_AeropuertoD">
                                 <option value="0">- Seleccione -</option>
                             </select>
